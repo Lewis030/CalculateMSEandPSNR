@@ -41,13 +41,10 @@ namespace CalculateMSEandPSNR
 			}
 
 			mse = (1.0 / (3 * width * height)) * (mseR + mseG + mseB);
-			lblMSE.Text = mse.ToString();
 			
 			rmse = Math.Sqrt(mse);
-			lblRMSE.Text = rmse.ToString();
 			
 			psnr = 10 * Math.Log10((Math.Pow(255, 2)) / mse);
-			lblPSNR.Text = psnr.ToString();
 
 			rtbMetrics.Text = "MSE = " + mse.ToString() +"\n" + "RMSE = " + rmse.ToString() + "\n" + "PSNR = " + psnr.ToString(); 
 
@@ -68,7 +65,7 @@ namespace CalculateMSEandPSNR
 					}
 					catch
 					{
-						MessageBox.Show("Невозможно открыть файл", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("Unable to open file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 			}
